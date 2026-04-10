@@ -1,0 +1,8 @@
+[package]
+name = "cuda-neurotransmitter"
+version = "0.1.0"
+edition = "2021"
+description = "Signal-to-gene activation pathways — neurotransmitter-inspired agent signaling with receptor binding and cascading responses"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
