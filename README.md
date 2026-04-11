@@ -1,45 +1,95 @@
 # cuda-neurotransmitter
 
-**Chemical signals that modulate agent cognition -- dopamine IS confidence.**
+Signal-to-gene activation pathways — neurotransmitter-inspired agent signaling with receptor binding and cascading responses (Rust)
 
-> These aren't metaphors. They're the same mathematical structures.
+Part of the Cocapn biology layer — bio-inspired agent lifecycle and energy.
 
-## The Mapping
+## What It Does
 
-| Neurotransmitter | Agent Concept | Half-life |
-|-----------------|--------------|-----------|
-| **Dopamine** | Confidence (reward signal) | 20 ticks |
-| **Serotonin** | Trust (sustained social bond) | 50 ticks |
-| **Norepinephrine** | Alertness (immediate threat) | 10 ticks |
-| **Endorphin** | Relief (tension release) | 30 ticks |
-| **Melatonin** | Calm (reduction of arousal) | 40 ticks |
-| **Acetylcholine** | Focus (attention sharpening) | 15 ticks |
-| **GABA** | Inhibition (deliberation suppression) | 25 ticks |
-| **Glutamate** | Activation (deliberation amplification) | 12 ticks |
+### Key Types
 
-## Key Mechanics
+- `NeuroSignal` — core data structure
+- `Receptor` — core data structure
+- `Synapse` — core data structure
+- `SynapticCleft` — core data structure
+- `NeuroEffect` — core data structure
+- `Cascade` — core data structure
+- _and 1 more (see source)_
 
-### Receptor Down-Regulation
-After 5+ activations, receptor sensitivity decreases with a floor at 20%. This prevents overstimulation. An agent that constantly receives dopamine (high confidence signals) becomes less sensitive to them, requiring stronger signals for the same effect.
+## Quick Start
 
-### Hebbian Synapses
-"Neurons that fire together wire together." Pre-synaptic + post-synaptic firing strengthens the connection (LTP). Pre-synaptic only firing weakens it (LTD). This is the fleet's simplest form of credit assignment.
+```bash
+# Clone
+git clone https://github.com/Lucineer/cuda-neurotransmitter.git
+cd cuda-neurotransmitter
 
-### Cascades
-Reward -> dopamine -> endorphin -> serotonin (positive feedback). Stress -> norepinephrine -> melatonin (calming feedback). Cascades chain multiple neurotransmitter responses into complex behavioral modulations.
+# Build
+cargo build
 
-## Ecosystem Integration
+# Run tests
+cargo test
+```
 
-- [cuda-genepool](https://github.com/Lucineer/cuda-genepool) -- Instincts modulated by neurotransmitter levels
-- [cuda-biology](https://github.com/Lucineer/cuda-biology) -- BiologicalAgent uses neurotransmitters
-- [cuda-emotion](https://github.com/Lucineer/cuda-emotion) -- Emotional states built on neurotransmitter foundation
-- [cuda-confidence](https://github.com/Lucineer/cuda-confidence) -- Mathematical confidence = dopamine signal
-- [cuda-trust](https://github.com/Lucineer/cuda-trust) -- Mathematical trust = serotonin signal
+## Usage
 
-## The Insight
+```rust
+use cuda_neurotransmitter::*;
 
-Dopamine IS confidence. Not a metaphor -- the same mathematical structure (exponential decay, accumulation, threshold gating). Serotonin IS trust. Norepinephrine IS alertness. By mapping neurotransmitters to agent cognitive primitives, we get the full power of neurochemistry as engineering parameters.
+// See src/lib.rs for full API
+// 15 unit tests included
+```
+
+### Available Implementations
+
+- `NeuroType` — see source for methods
+- `NeuroSignal` — see source for methods
+- `Receptor` — see source for methods
+- `Synapse` — see source for methods
+- `SynapticCleft` — see source for methods
+- `Cascade` — see source for methods
+
+## Testing
+
+```bash
+cargo test
+```
+
+15 unit tests covering core functionality.
+
+## Architecture
+
+This crate is part of the **Cocapn Fleet** — a git-native multi-agent ecosystem.
+
+- **Category**: biology
+- **Language**: Rust
+- **Dependencies**: See `Cargo.toml`
+- **Status**: Active development
+
+## Related Crates
+
+- [cuda-energy](https://github.com/Lucineer/cuda-energy)
+- [cuda-biology](https://github.com/Lucineer/cuda-biology)
+- [cuda-genepool](https://github.com/Lucineer/cuda-genepool)
+- [cuda-dna](https://github.com/Lucineer/cuda-dna)
+
+## Fleet Position
+
+```
+Casey (Captain)
+├── JetsonClaw1 (Lucineer realm — hardware, low-level systems, fleet infrastructure)
+├── Oracle1 (SuperInstance — lighthouse, architecture, consensus)
+└── Babel (SuperInstance — multilingual scout)
+```
+
+## Contributing
+
+This is a fleet vessel component. Fork it, improve it, push a bottle to `message-in-a-bottle/for-jetsonclaw1/`.
 
 ## License
 
-MIT OR Apache-2.0
+MIT
+
+---
+
+*Built by JetsonClaw1 — part of the Cocapn fleet*
+*See [cocapn-fleet-readme](https://github.com/Lucineer/cocapn-fleet-readme) for the full fleet roadmap*
