@@ -1,98 +1,46 @@
 # cuda-neurotransmitter
 
-Signal-to-gene activation pathways — neurotransmitter-inspired agent signaling with receptor binding and cascading responses (Rust)
+Signal-to-gene activation pathways inspired by neurotransmitter systems. Maps chemical signaling (dopamine, serotonin, etc.) to agent communication with receptor binding, cascading responses, and synaptic decay.
 
-Part of the Cocapn biology layer — bio-inspired agent lifecycle and energy.
+## The Key Insight
 
-## What It Does
+> Dopamine IS the confidence signal. Serotonin IS the trust signal. These aren't metaphors — they're the same mathematical structure (exponential decay, accumulation, threshold gating).
 
-### Key Types
+## Neurotransmitter Types
 
-- `NeuroSignal` — core data structure
-- `Receptor` — core data structure
-- `Synapse` — core data structure
-- `SynapticCleft` — core data structure
-- `NeuroEffect` — core data structure
-- `Cascade` — core data structure
-- _and 1 more (see source)_
+| Neurotransmitter | Effect | Maps To |
+|-----------------|--------|---------|
+| Dopamine | Reward/prediction error | Confidence boost, learning drive |
+| Serotonin | Calm/contentment | Trust building, risk reduction |
+| Norepinephrine | Alert/stress | Focus increase, exploration decrease |
+| Acetylcholine | Learning/plasticity | Gene expression rate increase |
+| Endorphin | Pleasure/pain | Reinforcement signal for gene fitness |
+| Oxytocin | Bonding/attachment | Trust in specific agents |
+| Melatonin | Sleep/repair | Rest instinct, memory consolidation |
+| Anandamide | Novelty/surprise | Expectation reset, exploration drive |
+
+## Architecture
+
+```text
+Signal → Receptor Binding → Cascade Activation → Gene Expression → Behavior Change
+  ↓          ↓                    ↓                    ↓
+NeuroType  Pattern Match    Threshold Gate     Protein (bytecode)
+```
 
 ## Quick Start
 
 ```bash
-# Clone
 git clone https://github.com/Lucineer/cuda-neurotransmitter.git
 cd cuda-neurotransmitter
-
-# Build
-cargo build
-
-# Run tests
-cargo test
+cargo test    # 15 tests
 ```
 
-## Usage
+## Key Types
 
-```rust
-use cuda_neurotransmitter::*;
-
-// See src/lib.rs for full API
-// 15 unit tests included
-```
-
-### Available Implementations
-
-- `NeuroType` — see source for methods
-- `NeuroSignal` — see source for methods
-- `Receptor` — see source for methods
-- `Synapse` — see source for methods
-- `SynapticCleft` — see source for methods
-- `Cascade` — see source for methods
-
-## Testing
-
-```bash
-cargo test
-```
-
-15 unit tests covering core functionality.
-
-## Architecture
-
-This crate is part of the **Cocapn Fleet** — a git-native multi-agent ecosystem.
-
-- **Category**: biology
-- **Language**: Rust
-- **Dependencies**: See `Cargo.toml`
-- **Status**: Active development
-
-## Related Crates
-
-- [cuda-energy](https://github.com/Lucineer/cuda-energy)
-- [cuda-biology](https://github.com/Lucineer/cuda-biology)
-- [cuda-genepool](https://github.com/Lucineer/cuda-genepool)
-- [cuda-dna](https://github.com/Lucineer/cuda-dna)
-
-## Fleet Position
-
-```
-Casey (Captain)
-├── JetsonClaw1 (Lucineer realm — hardware, low-level systems, fleet infrastructure)
-├── Oracle1 (SuperInstance — lighthouse, architecture, consensus)
-└── Babel (SuperInstance — multilingual scout)
-```
-
-## Contributing
-
-This is a fleet vessel component. Fork it, improve it, push a bottle to `message-in-a-bottle/for-jetsonclaw1/`.
-
-## License
-
-MIT
-
----
-
-*Built by JetsonClaw1 — part of the Cocapn fleet*
-*See [cocapn-fleet-readme](https://github.com/Lucineer/cocapn-fleet-readme) for the full fleet roadmap*
+- **`NeuroType`** — 8 neurotransmitter types with distinct behavioral effects
+- **`Receptor`** — Signal pattern matcher with binding affinity and threshold
+- **`Synapse`** — Agent-to-agent connection with strength, decay, and firing history
+- **`Cascade`** — One signal triggers multiple downstream gene activations
 
 ---
 
